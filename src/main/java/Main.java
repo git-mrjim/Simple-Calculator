@@ -498,7 +498,9 @@ public class Main extends javax.swing.JFrame {
                 }
                 break;
             case "+/-":
-                Display.setText(String.valueOf(new java.text.DecimalFormat("0.###").format(-newValue)));
+                if (!(Integer.parseInt(Display.getText()) > -1 && Integer.parseInt(Display.getText()) < 1)) {
+                     Display.setText(String.valueOf(-newValue));
+                }
                 break;
         }
     }//GEN-LAST:event_btnOperationActionPerformed
